@@ -4,21 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Safe Haven - Cyber Crime Awareness & Online FIR Portal</title>
-  
-  <!-- Fonts -->
+ 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;600;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- FontAwesome & Lucide Icons -->
+ 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://unpkg.com/lucide@latest"></script>
-  
-  <!-- Canvas QR Code Generator -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
 
   <script>
     tailwind.config = {
@@ -127,7 +122,7 @@
       100% { clip: rect(50px, 9999px, 95px, 0); }
     }
 
-    /* Grid Overlay background */
+   
     .cyber-grid-pattern {
       background-size: 40px 40px;
       background-image: 
@@ -135,7 +130,6 @@
         linear-gradient(to bottom, rgba(0, 255, 204, 0.05) 1px, transparent 1px);
     }
 
-    /* Typewriter Cursor */
     .typing-cursor::after {
       content: '|';
       animation: blink 1s infinite;
@@ -146,7 +140,7 @@
       50% { opacity: 0; }
     }
 
-    /* Station Scanning Effect */
+   
     .scanline {
       position: relative;
       overflow: hidden;
@@ -165,7 +159,7 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-cyber-accent selection:text-black">
 
-  <!-- AUDIO INITIALIZATION MODAL / BANNER -->
+  
   <div id="audioConsentBanner" class="fixed bottom-4 right-4 z-50 max-w-sm bg-cyber-card border border-cyber-accent/50 p-4 rounded-xl shadow-2xl backdrop-blur-md flex items-center justify-between space-x-3 transition-all transform duration-300">
     <div class="flex items-center space-x-3">
       <div class="w-10 h-10 rounded-full bg-cyber-accent/20 flex items-center justify-center text-cyber-accent animate-pulse">
@@ -181,12 +175,12 @@
     </button>
   </div>
 
-  <!-- HEADER / NAVIGATION BAR -->
+ 
   <header class="sticky top-0 z-40 bg-cyber-black/80 backdrop-blur-md border-b border-cyber-accent/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         
-        <!-- Logo -->
+     
         <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('home')">
           <div class="relative w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-cyber-accent/20 to-cyber-blue/20 border border-cyber-accent/50 shadow-lg">
             <i class="fa-solid fa-shield-halved text-cyber-accent text-2xl"></i>
@@ -203,7 +197,7 @@
           </div>
         </div>
 
-        <!-- Desktop Navigation Tabs -->
+       
         <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 font-orbitron text-xs font-semibold">
           <button onclick="switchTab('home')" id="nav-home" class="px-3 py-2 rounded-lg text-cyber-accent bg-cyber-accent/10 border border-cyber-accent/30 transition flex items-center gap-2">
             <i class="fa-solid fa-house"></i> Home
@@ -224,7 +218,6 @@
           </button>
         </nav>
 
-        <!-- Audio Trigger & Quick Emergency Call -->
         <div class="hidden lg:flex items-center space-x-3">
           <button onclick="playDispatchVoice()" class="p-2.5 rounded-xl border border-cyber-accent/30 bg-cyber-card hover:border-cyber-accent text-cyber-accent transition flex items-center gap-2 text-xs font-mono" title="Replay Station Dispatch Audio">
             <i class="fa-solid fa-radio text-sm animate-pulse"></i> Voice Dispatch
@@ -234,7 +227,7 @@
           </a>
         </div>
 
-        <!-- Mobile Menu Toggle Button -->
+        
         <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-gray-300 hover:text-cyber-accent focus:outline-none">
           <i class="fa-solid fa-bars text-2xl" id="menuIcon"></i>
         </button>
@@ -242,7 +235,7 @@
       </div>
     </div>
 
-    <!-- Mobile Navigation Drawer -->
+  
     <div id="mobileMenu" class="hidden md:hidden bg-cyber-card/95 border-b border-cyber-accent/20 px-4 pt-2 pb-6 space-y-2 font-orbitron text-sm">
       <button onclick="switchTab('home')" class="w-full text-left px-4 py-3 rounded-lg text-cyber-accent bg-cyber-accent/10 flex items-center gap-3">
         <i class="fa-solid fa-house"></i> Home
@@ -267,36 +260,33 @@
     </div>
   </header>
 
-  <!-- MAIN CONTENT CONTAINER -->
+
   <main class="flex-grow relative">
 
-    <!-- 1. HOME TAB (Hero Canvas + Interactive Overview) -->
+ >
     <section id="tab-home" class="block relative min-h-[calc(100vh-80px)] overflow-hidden">
-      <!-- Matrix Cyber Grid Background Canvas -->
       <canvas id="heroCanvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
-      
-      <!-- Overlay Gradient for contrast -->
-      <div class="absolute inset-0 bg-gradient-to-b from-cyber-black/70 via-cyber-black/40 to-cyber-black z-0"></div>
+       <div class="absolute inset-0 bg-gradient-to-b from-cyber-black/70 via-cyber-black/40 to-cyber-black z-0"></div>
 
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 flex flex-col items-center text-center">
         
-        <!-- Live Alert Badge -->
+      
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyber-card/90 border border-cyber-accent/40 text-cyber-accent font-mono text-xs mb-8 shadow-lg backdrop-blur-md">
           <span class="w-2.5 h-2.5 rounded-full bg-cyber-accent animate-ping"></span>
           <span>SYSTEM ONLINE: 24/7 CYBER THREAT MONITORING PORTAL</span>
         </div>
 
-        <!-- 3D Glitch Main Heading -->
+        
         <h1 class="text-4xl sm:text-6xl lg:text-7xl font-orbitron font-black text-white tracking-wider uppercase glitch-text mb-6 leading-tight max-w-5xl" data-text="PROTECTING CITIZENS FROM CYBER CRIME">
           PROTECTING CITIZENS <br class="hidden sm:inline"><span class="text-cyber-accent">FROM CYBER CRIME</span>
         </h1>
 
-        <!-- Animated Typewriter Dynamic Wording Subtitle -->
+ 
         <div class="h-12 flex items-center justify-center mb-10 max-w-3xl">
           <p id="typewriterText" class="text-lg sm:text-2xl font-mono text-cyber-accent/90 typing-cursor font-medium drop-shadow"></p>
         </div>
 
-        <!-- Call to Action Buttons -->
+       
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
           <button onclick="switchTab('categories')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyber-accent to-emerald-400 text-black font-orbitron font-extrabold text-sm uppercase tracking-wider hover:opacity-90 transition shadow-lg box-glow-cyan flex items-center justify-center gap-3">
             <i class="fa-solid fa-radar"></i> Explore Crime Matrix (15)
